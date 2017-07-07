@@ -5,7 +5,7 @@ require 'faker'
 describe Shurpa do
 
   # Configure Shurpa for Testing
-  Shurpa.api_base = "https://shurpa-staging.herokuapp.com"
+  Shurpa.api_base = "https://staging.shurpa.com"
   Shurpa.api_version = "api/v1"
   Shurpa.api_key = "***"
 
@@ -15,7 +15,7 @@ describe Shurpa do
 
   it 'loads the Shurpa API Account' do
     account = Shurpa::Account.load
-    is_valid = account[:id].is_a? Integer
+    is_valid = account[:name].is_a? String
     expect(is_valid).to eq(true)
   end
 
@@ -40,7 +40,7 @@ describe Shurpa do
     delivery = Shurpa::Delivery.create({
       # empty request body
     })
-    is_invalid = !delivery[:error].nil? && delivery[:error]
+    is_invalid = !delivery[:error].nil?
     expect(is_invalid).to eq(true)
   end
 
