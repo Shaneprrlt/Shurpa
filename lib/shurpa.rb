@@ -7,7 +7,7 @@ module Shurpa
 
   ## Shurpa API ##
   @api_version = "api/v1"
-  @api_base = "https://app.shurpa.com"
+  @api_base = "https://www.shurpa.com"
 
   ## API Connection ##
   class << self
